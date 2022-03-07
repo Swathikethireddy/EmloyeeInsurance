@@ -1,0 +1,17 @@
+package com.hcl.employee.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.hcl.employee.dto.EmployeeInsuranceDto;
+import com.hcl.employee.entity.Employee;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee , Integer>{
+
+	Employee findByEmployeeId(Integer employeeId);
+
+	EmployeeInsuranceDto save(EmployeeInsuranceDto empObj);
+
+
+}
